@@ -16,7 +16,7 @@ import LibraryBorrow from './pages/Library/LibraryBorrow.js';
 import LibraryDetail from './pages/Library/LibraryDetail';
 import LibraryRegister from './pages/Library/LibraryRegister';
 
-import Header from './components/Header';
+import Header from './components/Header.js/index.js';
 import Footer from './components/Footer';
 
 import { AuthProvider } from './contexts/AuthContext';
