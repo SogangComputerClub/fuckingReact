@@ -5,7 +5,7 @@ import Login from './pages/Login/Login';
 import SignUp from './pages/SignUp/SignUp';
 import PasswordRecovery from './pages/Login/PasswordRecovery';
 import NewPassword from './pages/Login/NewPassword';
-import MyPage from './pages/MyPage/MyPage.js';
+import MyPage from './pages/MyPage/MyPage';
 import Write from './pages/Board/Write';
 import BoardList from './pages/Board/BoardList';
 import BoardDetail from './pages/Board/BoardDetail';
