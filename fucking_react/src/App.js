@@ -5,7 +5,7 @@ import Login from './pages/Login/Login';
 import SignUp from './pages/SignUp/SignUp';
 import PasswordRecovery from './pages/Login/PasswordRecovery';
 import NewPassword from './pages/Login/NewPassword';
-import MyPage from './pages/MyPage/MyPage';
+import MyPage from './pages/MyPage/MyPage.js';
 import Write from './pages/Board/Write';
 import BoardList from './pages/Board/BoardList';
 import BoardDetail from './pages/Board/BoardDetail';
@@ -16,7 +16,7 @@ import LibraryBorrow from './pages/Library/LibraryBorrow';
 import LibraryDetail from './pages/Library/LibraryDetail';
 import LibraryRegister from './pages/Library/LibraryRegister';
 
-import Header from './components/Header.js/index.js';
+import Header from './components/Header';
 import Footer from './components/Footer';
 
 import { AuthProvider } from './contexts/AuthContext';

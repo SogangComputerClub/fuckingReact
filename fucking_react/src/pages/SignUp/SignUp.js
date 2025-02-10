@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './SignUp.css';
+
 
 function SignUp() {
 
@@ -76,10 +76,11 @@ function SignUp() {
     </form>
 
     return (
-        <div className='SignUp'>
-            <h2>회원가입</h2>
-            <div className="signup-progress">
-                <div className={`progress-step ${step >= 1 ? 'active' : ''}`}>1</div>
+        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+        <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg">
+            <h2 className="text-2xl font-bold text-center mb-4">회원가입</h2>
+            <div className="flex justify-center mb-6"> 
+               <div className={`progress-step ${step >= 1 ? 'active' : ''}`}>1</div>
                 {/*
                 $:삼항연산자-step이 1이상인가 -true)active 클래스를 추가 false)""
                 `:백틱-문자열리터럴;문자열 안에 변수를 쉽게 넣을 수 있게 도와줌&문자열을 동적으로 만들 수 있음
@@ -89,15 +90,15 @@ function SignUp() {
             </div>
             <div className="signup-content">
                 {step === 1 && (
-                    <div className="step">
-                        <h3>약관 동의</h3>
-                        <div className="form-group">
+                     <div>
+                        <h3 className="text-lg font-semibold mb-4">약관 동의</h3>
+                        <div className="mb-4">
                             <label>서비스 약관 동의</label>
                             <textarea readOnly value="약관 내용" />
                             <input type="checkbox" name="terms" onChange={handleChange} /> 동의합니다.
                             {errors.terms && <p className="error">{errors.terms}</p>}
                         </div>
-                        <div className="form-group">
+                        <div className="mb-4">
                             <label>개인 정보 수집 및 이용 동의</label>
                             <textarea readOnly value="개인 정보 수집 및 이용 동의 내용" />
                             <input type="checkbox" name="privacy" onChange={handleChange} /> 동의합니다.
@@ -108,7 +109,7 @@ function SignUp() {
                 )}
                 {step === 2 && (
                     <div className="step">
-                        <h3>정보 입력</h3>
+                        <h3 className="text-lg font-semibold mb-4">정보 입력</h3>
                         <div className="form-group">
                             <label htmlFor="name">이름</label>
                             <input type="text" id="name" name="name" value={data.name} onChange={handleChange} required />
@@ -145,16 +146,17 @@ function SignUp() {
                             {errors.confirmPassword && <p className="error">{errors.confirmPassword}</p>}
                         </div>
 
-                        <div className="second-button">
-                            <button type="button" onClick={prevStep}>이전</button>
-                            <button type="submit" disabled={isSubmitting}>다음</button>
+                        <div className="flex justify-between mt-4">                            <button type="button" onClick={prevStep}>이전</button>
+                        <button onClick={prevStep} className="bg-gray-400 text-white py-2 px-4 rounded">이전</button>
+                            <button onClick={nextStep} className="bg-blue-500 text-white py-2 px-4 rounded">다음</button>
                         </div>
                     </div>
                 )}
                 {step === 3 && (
-                    <div className="step">
-                        <h3>가입 완료</h3>
-                        <p>가입이 완료되었습니다. 아래 버튼을 클릭하여 로그인하세요.</p>
+                    <div className="text-center">
+                    <h3 className="text-lg font-semibold mb-2">가입 완료</h3>
+                    <p className="text-gray-600 mb-4">가입이 완료되었습니다. 로그인하여 서비스를 이용하세요.</p>
+                    
                         <Link to="/Login">
                             <button type="button">회원가입 완료</button>
                         </Link>
@@ -162,7 +164,7 @@ function SignUp() {
                 )}
             </div>
 
-        </div>
+        </div>        </div>
     );
 };
 export default SignUp;
