@@ -1,3 +1,6 @@
+import './App.css';
+import './index.css';
+
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Main from './pages/Main/Main';
@@ -20,38 +23,48 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 import { AuthProvider } from './contexts/AuthContext';
-import './App.css';
 
 function App() {
-  return (
-    <AuthProvider>
-      <Router>
-        <div className='App'>
-          <Header />
-          <main>
-            <Routes>
-              <Route path="/" element={<Main />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/passwordRecovery" element={<PasswordRecovery />} />
-              <Route path="/NewPassword" element={<NewPassword />} />
-              <Route path="/signup" element={<SignUp />} />
-              <Route path="/mypage" element={<MyPage />} />
-              <Route path="/write" element={<Write />} />
-              <Route path="/boardlist" element={<BoardList />} />
-              <Route path="/boarddetail" element={<BoardDetail />} />
-              <Route path="/study" element={<Study />} />
-              <Route path="/studylist" element={<StudyList />} />
-              <Route path="/studydetail" element={<StudyDetail />} />
-              <Route path="/libraryborrow" element={<LibraryBorrow />} />
-              <Route path="/librarydetail" element={<LibraryDetail />} />
-              <Route path="/libraryregister" element={<LibraryRegister />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
+  return(
+<AuthProvider>
+  <Router>
+        <h1 style={{color:'red'}}>Testing Header</h1>
+      <Header/>
+      <Footer/>
       </Router>
-    </AuthProvider>
+      </AuthProvider>
+
   );
 }
+//   return (
+//     <AuthProvider>
+//       <Router>
+//         <div className='App'>
+//           <Header />
+//           <main>
+//             <Routes>
+//               <Route path="/" element={<Main />} />
+//               <Route path="/login" element={<Login />} />
+//               <Route path="/passwordRecovery" element={<PasswordRecovery />} />
+//               <Route path="/NewPassword" element={<NewPassword />} />
+//               <Route path="/signup" element={<SignUp />} />
+//               <Route path="/mypage" element={<MyPage />} />
+//               <Route path="/write" element={<Write />} />
+//               <Route path="/boardlist" element={<BoardList />} />
+//               <Route path="/boarddetail" element={<BoardDetail />} />
+//               <Route path="/study" element={<Study />} />
+//               <Route path="/studylist" element={<StudyList />} />
+//               <Route path="/studydetail" element={<StudyDetail />} />
+//               <Route path="/libraryborrow" element={<LibraryBorrow />} />
+//               <Route path="/librarydetail" element={<LibraryDetail />} />
+//               <Route path="/libraryregister" element={<LibraryRegister />} />
+//             </Routes>
+//           </main>
+//           <Footer />
+//         </div>
+//       </Router>
+//     </AuthProvider>
+//   );
+// }
 
 export default App;
